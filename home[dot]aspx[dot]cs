@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Home : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        System.Diagnostics.Process process = new System.Diagnostics.Process();
+        System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+        startInfo.FileName = "cmd.exe";
+        //startInfo.Arguments = @"/C javac C:\Users\thechamp\IdeaProjects\trail2\src\com\company\Main.java";
+        startInfo.Arguments = @"/C gcc z:\a.c";
+        process.StartInfo = startInfo;
+        process.Start();
+        //startInfo.FileName = "cmd.exe";
+        //startInfo.Arguments = @"/C java C:\Users\thechamp\IdeaProjects\trail2\src\com\company\Main <i >pout.txt";
+        //process.StartInfo = startInfo;
+        //process.Start();
+    }
+
+    protected void Run_Click(object sender, EventArgs e)
+    {
+        System.Diagnostics.Process process = new System.Diagnostics.Process();
+        System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+        startInfo.FileName = "cmd.exe";
+        Label1.Text = "z:\a.exe ";
+        //string s = @"/C " + "java - cp " + "\"" + @"C: \Users\thechamp\IdeaProjects\trail2\src\com\company" + "\"" + @" Main <i >pout.txt";
+        ///Label1.Text = @"/C " + "java -cp " + "\"" + @"C:\Users\thechamp\IdeaProjects\trail2\src\com\company" + "\"" + " Main <i>"  +"green1.txt </i>pout.txt";
+        //startInfo.Arguments = @"/C " + "java -cp " + "\"" + @"C:\Users\thechamp\IdeaProjects\trail2\src\com\company" + "\"" + " Main <"  +"green1.txt " + (char)62 + "pout.txt";
+        
+            startInfo.Arguments = @"/C " + "gcc z:\a.c";
+        //startInfo.Arguments="/C java -cp \"C: \\Users\\thechamp\\IDeaProjects\\trail2\\src\\com\\company\" Main <i.txt >pout.txt";
+        //        startInfo.Arguments = "/C java Main <in.txt >out.txt";
+        process.StartInfo = startInfo;
+        process.Start();
+
+    }
+}
